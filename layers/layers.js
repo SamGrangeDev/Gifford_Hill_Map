@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-//ol.proj.get("EPSG:3857").setExtent([15489697.947445, -4189842.145607, 15509636.885638, -4179990.359957]);
+//ol.proj.get("EPSG:3857").setExtent([15492270.524586, -4188195.068443, 15506010.512742, -4181406.170417]);
 var wms_layers = [];
 
 
@@ -121,13 +121,13 @@ lyr_GoogleMaps_0.setVisible(false);lyr_ESRISatelliteArcGISWorld_Imagery_1.setVis
 var layersList = [group_BaseLayer,group_Masterplans,lyr_Zoning_4,lyr_ProjectOwned_Parcels_5,lyr_GiffordHillParcelBoundary_6];
 lyr_Zoning_4.set('fieldAliases', {'id': 'id', 'Land use': 'Land use', });
 lyr_ProjectOwned_Parcels_5.set('fieldAliases', {'Address': 'Address', 'Zoning': 'Zoning', 'Options': 'Options', });
-lyr_GiffordHillParcelBoundary_6.set('fieldAliases', {'fid': 'fid', 'Address': 'Address', 'Gross_Ha': 'Gross_Ha', 'Zoning': 'Zoning', 'Gifford Hill Lands': 'Gifford Hill Lands', });
+lyr_GiffordHillParcelBoundary_6.set('fieldAliases', {'fid': 'fid', 'Address': 'Address', 'Gross_Ha': 'Gross_Ha', 'Zoning': 'Zoning', 'Gifford Hill Lands': 'Gifford Hill Lands', 'NDH': 'NDH', });
 lyr_Zoning_4.set('fieldImages', {'id': 'TextEdit', 'Land use': 'TextEdit', });
 lyr_ProjectOwned_Parcels_5.set('fieldImages', {'Address': 'TextEdit', 'Zoning': 'TextEdit', 'Options': 'TextEdit', });
-lyr_GiffordHillParcelBoundary_6.set('fieldImages', {'fid': 'TextEdit', 'Address': 'TextEdit', 'Gross_Ha': 'TextEdit', 'Zoning': 'TextEdit', 'Gifford Hill Lands': 'TextEdit', });
+lyr_GiffordHillParcelBoundary_6.set('fieldImages', {'fid': 'TextEdit', 'Address': 'TextEdit', 'Gross_Ha': 'TextEdit', 'Zoning': 'TextEdit', 'Gifford Hill Lands': 'TextEdit', 'NDH': 'TextEdit', });
 lyr_Zoning_4.set('fieldLabels', {'id': 'hidden field', 'Land use': 'inline label - visible with data', });
 lyr_ProjectOwned_Parcels_5.set('fieldLabels', {'Address': 'hidden field', 'Zoning': 'hidden field', 'Options': 'inline label - visible with data', });
-lyr_GiffordHillParcelBoundary_6.set('fieldLabels', {'fid': 'hidden field', 'Address': 'inline label - visible with data', 'Gross_Ha': 'inline label - visible with data', 'Zoning': 'inline label - visible with data', 'Gifford Hill Lands': 'hidden field', });
+lyr_GiffordHillParcelBoundary_6.set('fieldLabels', {'fid': 'hidden field', 'Address': 'inline label - visible with data', 'Gross_Ha': 'inline label - visible with data', 'Zoning': 'inline label - visible with data', 'Gifford Hill Lands': 'hidden field', 'NDH': 'inline label - visible with data', });
 lyr_GiffordHillParcelBoundary_6.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
