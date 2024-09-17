@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([15492877.420482, -4188485.592618, 15506640.134956, -4181297.579533], map.getSize());
+map.getView().fit([15489697.947445, -4189842.145607, 15509636.885638, -4179990.359957], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -439,11 +439,11 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
-        titleElement.className = 'bottom-left-title ol-control';
-        titleElement.innerHTML = '<h2 class="project-title">Gifford Hill Map</h2>';
+        titleElement.className = 'top-left-title ol-control';
+        titleElement.innerHTML = '<h2 class="project-title">Gifford Hill_Map</h2>';
         return titleElement;
     })(),
-    target: 'bottom-left-container'
+    target: 'top-left-container'
 });
 map.addControl(Title)
     
@@ -860,6 +860,23 @@ document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
 
 
 //layerswitcher
+
+var layerSwitcher = new ol.control.LayerSwitcher({
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
+map.addControl(layerSwitcher);
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
 
 
 
